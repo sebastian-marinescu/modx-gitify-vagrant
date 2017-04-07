@@ -90,5 +90,7 @@ data:
             #- pdotools
     #modmore.com:
         #service_url: 'https://rest.modmore.com/'
+        #username: modmore_username
+        #api_key: .modmore.com.key
         #packages:
             #- clientconfig
