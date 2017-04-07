@@ -1,0 +1,15 @@
+node_modules/
+.idea/
+bower_components/
+public/
+.vagrant
+
+project/ht.access
+project/manager/
+project/core/
+project/setup/
+project/index.php
+project/connectors/
+project/config.core.php
+project/assets/components/
+project/git/backup/
