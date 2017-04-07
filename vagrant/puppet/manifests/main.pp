@@ -3,7 +3,7 @@
 =====================================*/
 
 $database_name = "dbname"
-$database_user = "username"
+$database_user = "dbusername"
 $database_password = "dbpassword"
 
 /*-----  End of Configuration  ------*/
