@@ -72,21 +72,21 @@ For now it is not possible to install these packages through the CLI, so a few e
 
 * [Add an alias to your hosts-file](https://support.rackspace.com/how-to/modify-your-hosts-file/) 
 of `192.168.33.10 vagrant.dev`. You may need to restart your computer before the changes take effect.
-* Open the .gitify-file, scroll all the way down and uncomment the values before 'modmore' and 'service_url' by removing the hashes `#`.
+* [Create an API-key](https://www.modmore.com/account/api-keys/) on the ModMore website.
+* In the folder /project create a file `.modmore.com.key` and paste in the API key you've just created.
+* Open the .gitify-file, scroll all the way down and uncomment the values `packages`, `modmore.com`, `service_url`, `username`, `api_key` by removing the hashes `#` in front. Replace username `modmore_username` with the username that is associated with your API-key.
 * Run:
  ```
  vagrant ssh
  cd /var/www/project
  Gitify install:package --all
  ```
-This will add ModMore to your package providers
-(note that this command will also install any other extra's you may have specified in the .gitify-file).
+You will get an error since there are no packages to install, but this will still add ModMore to your package providers with the correct username and API-key. _Note that this command will also install any other extra's you may have specified in the .gitify-file_.
 * Go to http://vagrant.dev/manager › Extras › Installer
 * Press the little dropdown button next to 'Download Extras' and select 'Select a provider'.
-* In the dropdown pick 'modmore.com' and 'Save and go to Package Browser'. _If you run into an error, go to the `providers`-tab, right-click on modmore.com > `Update provider` and paste in the API key you can 
-create on www.modmore.com_
-* You can now download premium ModMore extras!
-
+* In the dropdown pick 'modmore.com' and 'Save and go to Package Browser'.
+ * _If you run into an error, go to the `providers`-tab, right-click on modmore.com > `Update provider` and check if the API-key are correct_
+* You can now download premium ModMore extras for development use!
 
 ## Big thanks goes out to:
 * MODX & its community
