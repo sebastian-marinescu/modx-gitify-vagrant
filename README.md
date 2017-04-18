@@ -96,7 +96,7 @@ You can use different branches for different servers (`dev` and `master` or `pro
 ### Setting up
 Before running the first time, it is wise to change the code for testing purposes. Update the code in `update_modx` to not make any changes: add `--dry-run` to the `rsync_options` and comment the line `Gitify build`.
 
-* Install `Gitify` on the server  (for MODX Cloud instances you may want to follow [these instructions](https://github.com/modmore/Gitify/issues/107#issuecomment-112702336))
+* Install `Gitify` on the server  (for MODX Cloud instances you may want to follow [these instructions](https://github.com/modmore/Gitify/issues/107#issuecomment-294887376))
 * Make sure `git` and `rsync` are installed
 * Setup MODX as detailed above
 * Create an SSH Key on the server ([using `ssh-keygen`](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/))
