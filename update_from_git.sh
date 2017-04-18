@@ -22,8 +22,11 @@
 # Settings
 ##################################################################################
 
+# Get the name of the repository: (assuming last part of the URL)
+gitname="modx-gitify-vagrant"
+
 # The repository url (with "git@github.com:" for github repository):
-url="git@github.com:ANGIstudio/modx-gifify-vagrant"
+url="git@github.com:ANGIstudio/${gitname}"
 
 # The branch to check-out:
 branch="master"
@@ -37,10 +40,6 @@ temp="/home/vagrant"
 
 # MODX-directory: (absolute path!)
 modx="/var/www/project"
-
-# Get the name of the repository: (assuming last part of the URL)
-arr=(${url//\// })
-gitname=${arr[${#arr[@]}-1]}
 
 # Commands to run after git is up to date:
 update_modx() {
