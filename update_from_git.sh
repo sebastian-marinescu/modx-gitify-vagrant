@@ -28,14 +28,14 @@ url="git@github.com:ANGIstudio/modx-gifify-vagrant"
 # The branch to check-out:
 branch="master"
 
-# Location of ModX root in the repository: (relative path in repository!)
+# Location of MODX root in the repository: (relative path in repository!)
 modx_in_repo="project"
 
 # Temporary directory for cloning the repository: (absolute path!)
 # NOTE: this directory should not be web-accessible!
 temp="/home/vagrant"
 
-# ModX-directory: (absolute path!)
+# MODX-directory: (absolute path!)
 modx="/var/www/project"
 
 # Get the name of the repository: (assuming last part of the URL)
@@ -78,7 +78,7 @@ fi
 
 if [ ! -d "${modx}" ]
 then
-  echo "ERROR: ModX directory (${modx}) does not exist." >&2
+  echo "ERROR: MODX directory (${modx}) does not exist." >&2
   exit 1
 fi
 
@@ -103,7 +103,7 @@ else
 fi
 
 ##################################################################################
-# Updating ModX
+# Updating MODX
 ##################################################################################
 
 update_modx

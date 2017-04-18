@@ -89,23 +89,23 @@ You will get an error since there are no packages to install, but this will stil
 * You can now download premium ModMore extras for development use!
 
 ## Updating a remote server
-A remote server can be updated using the `update_from_git.sh` file. This script clones the git-repository on the server and updates an existing ModX-installation there. The advantage of using this method is that the code on the server can always be traced back to a specific commit.
+A remote server can be updated using the `update_from_git.sh` file. This script clones the git-repository on the server and updates an existing MODX-installation there. The advantage of using this method is that the code on the server can always be traced back to a specific commit.
 
 You can use different branches for different servers (`dev` and `master` or `production`).
 
 ### Setting up
 Before running the first time, it is wise to change the code for testing purposes. Update the code in `update_modx` to not make any changes: add `--dry-run` to the `rsync_options` and comment the line `Gitify build`.
 
-* install `Gitify` on the server
-* make sure `git` and `rsync` are installed
-* setup ModX as detailed above
-* create an SSH Key on the server ([using `ssh-keygen`](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/))
-* add this key as a valid key for your repository (for GitHub you can [use a deploy key](https://developer.github.com/guides/managing-deploy-keys/))
-* change the options in `update_from_git.sh`:
+* Install `Gitify` on the server  (for MODX Cloud instances you may want to follow [these instructions](https://github.com/modmore/Gitify/issues/107#issuecomment-112702336))
+* Make sure `git` and `rsync` are installed
+* Setup MODX as detailed above
+* Create an SSH Key on the server ([using `ssh-keygen`](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/))
+* Add this key as a valid key for your repository (for GitHub you can [use a deploy key](https://developer.github.com/guides/managing-deploy-keys/))
+* Change the options in `update_from_git.sh`:
    - your repository-url
    - the branch that contains the relevant code for this server
-   - review the two directories used (git-directory and ModX-directory)
-   - review the commands used to update ModX
+   - review the two directories used (git-directory and MODX-directory)
+   - review the commands used to update MODX
 
 After testing the script, re-enable the code (remove `--dry-run` and uncomment `Gitify build`).
 
