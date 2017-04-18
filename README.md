@@ -110,6 +110,7 @@ Before running the first time, it is wise to change the code for testing purpose
 After testing the script, re-enable the code (remove `--dry-run` and uncomment `Gitify build`).
 
 ### Usage
+Once the file is uploaded on your server, you can simply run it using:
 ```
 ssh user@server ./update_from_git.sh
 ```
