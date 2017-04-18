@@ -88,6 +88,34 @@ You will get an error since there are no packages to install, but this will stil
  * _If you run into an error, go to the `providers`-tab, right-click on modmore.com > `Update provider` and check if the API-key are correct_
 * You can now download premium ModMore extras for development use!
 
+## Updating a remote server
+A remote server can be updated using the `update_from_git.sh` file. This script clones the git-repository on the server and updates an existing MODX-installation there. The advantage of using this method is that the code on the server can always be traced back to a specific commit.
+
+You can use different branches for different servers (`dev` and `master` or `production`).
+
+### Setting up
+Before running the first time, it is wise to change the code for testing purposes. Update the code in `update_modx` to not make any changes: add `--dry-run` to the `rsync_options` and comment the line `Gitify build`.
+
+* Install `Gitify` on the server  (for MODX Cloud instances you may want to follow [these instructions](https://github.com/modmore/Gitify/issues/107#issuecomment-294887376))
+* Make sure `git` and `rsync` are installed
+* Setup MODX as detailed above
+* Create an SSH Key on the server ([using `ssh-keygen`](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/))
+* Add this key as a valid key for your repository (for GitHub you can [use a deploy key](https://developer.github.com/guides/managing-deploy-keys/))
+* Change the options in `update_from_git.sh`:
+   - your repository-url
+   - the branch that contains the relevant code for this server
+   - review the two directories used (git-directory and MODX-directory)
+   - review the commands used to update MODX
+
+After testing the script, re-enable the code (remove `--dry-run` and uncomment `Gitify build`).
+
+### Usage
+Once the file is uploaded on your server, you can simply run it using:
+```
+ssh user@server ./update_from_git.sh
+```
+_note: the above works if the `update_from_git` is in the home-directory. Otherwise, you need to specify the full path_
+
 ## Big thanks goes out to:
 * MODX & its community
 * [ModMore](https://www.modmore.com)
@@ -95,4 +123,3 @@ You will get an error since there are no packages to install, but this will stil
 ## Planned features:
 TODO:
 - [ ] Database Sync
-- [ ] MODX Cloud Sync
